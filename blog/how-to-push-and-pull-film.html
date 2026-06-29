@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Push and Pull Film (and When To) | Flog</title>
+  <meta name="description" content="Pushing and pulling film means rating it at a different ISO than the box and compensating in development. A plain-English guide to what changes, when to do it, and why you must log it." />
+  <link rel="canonical" href="https://flog.contraststudio.app/blog/how-to-push-and-pull-film.html" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="How to Push and Pull Film (and When To)" />
+  <meta property="og:description" content="What pushing and pulling film actually does to your photos, when each one helps, and why the whole roll has to come along for the ride." />
+  <meta property="og:url" content="https://flog.contraststudio.app/blog/how-to-push-and-pull-film.html" />
+  <meta property="og:site_name" content="Flog" />
+  <meta property="og:image" content="https://flog.contraststudio.app/og.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How to Push and Pull Film (and When To)" />
+  <meta name="twitter:description" content="What pushing and pulling film actually does to your photos, and when each one helps." />
+  <meta name="twitter:image" content="https://flog.contraststudio.app/og.png" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How to Push and Pull Film (and When To)",
+    "description": "A plain-English guide to pushing and pulling film — rating it at a different ISO than the box and compensating in development — what changes in the image, when each helps, and why you must log it.",
+    "datePublished": "2026-06-23",
+    "dateModified": "2026-06-23",
+    "image": "https://flog.contraststudio.app/og.png",
+    "url": "https://flog.contraststudio.app/blog/how-to-push-and-pull-film.html",
+    "mainEntityOfPage": "https://flog.contraststudio.app/blog/how-to-push-and-pull-film.html",
+    "author": { "@type": "Organization", "name": "Contrast Studio LLC" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Flog",
+      "logo": { "@type": "ImageObject", "url": "https://flog.contraststudio.app/icon-192.png" }
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0c0b0d;
+      --panel: #161419;
+      --ink: #ece7dd;
+      --ink-dim: #a39d92;
+      --ink-faint: #6f6a62;
+      --accent: #e07a3e;
+      --line: rgba(236, 231, 221, 0.12);
+      --serif: 'Fraunces', Georgia, serif;
+      --sans: 'Inter', system-ui, sans-serif;
+      --mono: 'Space Mono', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      pointer-events: none;
+      opacity: 0.045;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    .filmstrip {
+      width: 100%;
+      height: 56px;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px;
+      border-bottom: 1px solid var(--line);
+    }
+    .perfs { display: flex; gap: 12px; }
+    .perfs span { width: 16px; height: 22px; background: var(--bg); border-radius: 3px; }
+
+    .wrap { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+
+    .masthead {
+      padding: 64px 0 40px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 48px;
+    }
+
+    .kicker {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(36px, 7vw, 60px);
+      line-height: 1.02;
+      letter-spacing: -0.015em;
+      margin-bottom: 28px;
+    }
+
+    .dek {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(18px, 2.6vw, 22px);
+      line-height: 1.5;
+      color: var(--ink-dim);
+      max-width: 38ch;
+    }
+
+    .byline {
+      margin-top: 32px;
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      color: var(--ink-faint);
+    }
+
+    article { padding-bottom: 32px; }
+
+    article p { font-size: 18px; color: var(--ink); margin-bottom: 26px; }
+
+    article > p.lead::first-letter {
+      font-family: var(--serif);
+      font-weight: 600;
+      float: left;
+      font-size: 76px;
+      line-height: 0.78;
+      padding: 8px 14px 0 0;
+      color: var(--accent);
+    }
+
+    h2 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(24px, 4vw, 32px);
+      letter-spacing: -0.01em;
+      line-height: 1.15;
+      margin: 52px 0 20px;
+    }
+
+    strong { font-weight: 500; color: #fff; }
+    em { font-style: italic; }
+
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(224,122,62,0.4); }
+    a:hover { border-bottom-color: var(--accent); }
+
+    .pullquote {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(24px, 4.2vw, 34px);
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin: 48px 0;
+      padding-left: 24px;
+      border-left: 3px solid var(--accent);
+    }
+
+    .log { list-style: none; margin: 8px 0 12px; }
+    .log li {
+      position: relative;
+      padding: 22px 0 22px 64px;
+      border-top: 1px solid var(--line);
+    }
+    .log li:last-child { border-bottom: 1px solid var(--line); }
+    .log .num {
+      position: absolute;
+      left: 0;
+      top: 20px;
+      font-family: var(--mono);
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--accent);
+      width: 52px;
+    }
+    .log .label { font-family: var(--sans); font-weight: 500; font-size: 18px; color: #fff; margin-bottom: 4px; }
+    .log .body { font-size: 16px; color: var(--ink-dim); line-height: 1.6; }
+
+    .cta {
+      margin: 56px 0 8px;
+      padding: 32px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+    }
+    .cta .eyebrow {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 14px;
+    }
+    .cta p { font-size: 17px; color: var(--ink-dim); margin-bottom: 22px; }
+    .cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #1a0f08;
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 15px;
+      padding: 13px 24px;
+      border-radius: 999px;
+    }
+    .cta-btn:hover { opacity: 0.9; border: none; }
+
+    footer {
+      border-top: 1px solid var(--line);
+      margin-top: 64px;
+      padding: 32px 0 80px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    footer a, footer span {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: var(--ink-faint);
+      border: none;
+    }
+    footer a:hover { color: var(--ink); border: none; }
+  </style>
+</head>
+<body>
+  <div class="filmstrip" aria-hidden="true">
+    <div class="perfs"><span></span><span></span><span></span><span></span></div>
+    <div class="perfs"><span></span><span></span><span></span><span></span></div>
+  </div>
+
+  <div class="wrap">
+    <header class="masthead">
+      <p class="kicker">Technique</p>
+      <h1>How to push and pull film</h1>
+      <p class="dek">It's the closest thing film has to an ISO dial — except you set it once for the whole roll, and you don't fully see the result until development. Here's what's really happening, and when it's worth doing.</p>
+      <p class="byline">Flog · June 2026 · 7 min read</p>
+    </header>
+
+    <article>
+      <p class="lead">Pushing and pulling sound like advanced tricks, but the idea is simple: you decide to treat your film as if it were faster or slower than the box says, and then you tell the lab to develop it accordingly. Push, and a roll of ISO 400 becomes your 1600 in a dim bar. Pull, and that same 400 behaves like a gentler 200 under harsh midday sun.</p>
+
+      <p>What makes it different from turning a dial on a digital camera is timing. Digital ISO is applied per frame, after the fact. With film, the decision is baked into <strong>development</strong> — so it applies to the <em>entire roll</em>, and you commit to it the moment you start shooting.</p>
+
+      <h2>What "pushing" actually means</h2>
+
+      <p>Every film has a box speed — its rated ISO, the speed the manufacturer says gives you the most faithful result. <strong>Pushing</strong> means rating the film higher than that and underexposing on purpose: you set your meter to EI 1600 on a 400 film, which is two stops under. Then, in development, the lab leaves the film in the chemistry longer to build the underexposed image back up.</p>
+
+      <p><strong>Pulling</strong> is the mirror image: rate the film lower than box (say 200 on a 400 film), overexpose by a stop, and shorten development to compensate.</p>
+
+      <p>The shorthand is in stops. "Push two" = rate two stops faster (400 → 1600). "Pull one" = rate one stop slower (400 → 200).</p>
+
+      <p class="pullquote">Exposure happens in the camera. Pushing and pulling happen in the tank.</p>
+
+      <h2>What it does to the picture</h2>
+
+      <p>Compensated development isn't a free lunch — it's a trade. Roughly, here's the deal:</p>
+
+      <ol class="log">
+        <li>
+          <span class="num">PUSH</span>
+          <div class="label">More contrast, more grain, less shadow</div>
+          <div class="body">Highlights and midtones come up nicely, but the underexposed shadows never recorded much detail, so they go dark and empty. Grain gets coarser and contrast climbs. On black and white this reads as gritty, moody, photojournalistic — often exactly the look people push <em>for</em>.</div>
+        </li>
+        <li>
+          <span class="num">PULL</span>
+          <div class="label">Lower contrast, finer grain, tamer highlights</div>
+          <div class="body">Overexposing then under-developing softens contrast and protects blown highlights — useful for very harsh, high-contrast light. Grain tightens up. The risk is flat, muddy results if you overdo it.</div>
+        </li>
+      </ol>
+
+      <h2>When to reach for it</h2>
+
+      <p><strong>Push</strong> when there isn't enough light and you need a usable shutter speed — a concert, a dim café, dusk on the street — and you'd rather have a grainy, contrasty frame than a blurry one. Tri-X pushed to 1600 is a classic for exactly this. Push, too, when you simply <em>want</em> that harder, grainier look.</p>
+
+      <p><strong>Pull</strong> far less often: mainly to rein in a brutally contrasty scene, or when you've deliberately overexposed for smoother tones and finer grain. Most photographers push ten rolls before they ever pull one.</p>
+
+      <p>A few honest caveats. Black-and-white film pushes most gracefully; colour negative (C-41) tolerates a stop or two but shifts colour as you go; slide film (E6) can be pushed and pulled but is least forgiving of error. And pushing doesn't create shadow detail that exposure never captured — it rescues the rest of the frame around those empty shadows. Treat it as a creative tool, not a fix for "I needed more light."</p>
+
+      <h2>The part people forget: commit, and write it down</h2>
+
+      <p>Because development is per-roll, <strong>the whole roll has to be shot at the same rating.</strong> You can't push frames 1–12 and shoot the rest at box speed; the tank doesn't know the difference. Decide before you load, or at least before you start the roll, and stick with it.</p>
+
+      <p>Then record it — in two places. Mark the canister so the right roll gets the right development, and tell your lab clearly ("push 2 stops") when you drop it off; they can't detect it from the film. And note it for <em>yourself</em>, frame by frame, so that when the scans come back you know which look came from which choice. A roll that says "Tri-X @ 1600, pushed 2" next to the frames is how a happy accident becomes a technique you can repeat.</p>
+
+      <p>That's the same habit we wrote about in <a href="/blog/what-to-write-down-when-you-shoot-film.html">what to write down when you shoot film</a> — and it's the whole reason <a href="https://flog.contraststudio.app/">Flog</a> exists: log the stock and the speed you rated it at as you shoot, and pair it back to the scans when they return, so your pushes and pulls actually teach you something.</p>
+
+      <div class="cta">
+        <p class="eyebrow">Log every push, pull, and stock</p>
+        <p>Flog is a film photography logbook for iPhone — record the rated speed and settings for every roll, then pair your developed scans back to the frames they came from.</p>
+        <a class="cta-btn" href="https://apps.apple.com/app/id6776744262">Download on the App Store</a>
+      </div>
+    </article>
+
+    <footer>
+      <span>© 2026 Contrast Studio LLC</span>
+      <span>
+        <a href="https://flog.contraststudio.app/">Flog</a>
+        &nbsp;·&nbsp;
+        <a href="/support.html">Support</a>
+        &nbsp;·&nbsp;
+        <a href="/privacy.html">Privacy</a>
+      </span>
+    </footer>
+  </div>
+</body>
+</html>
