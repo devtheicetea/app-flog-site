@@ -44,236 +44,239 @@
   }
   </script>
 
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg: #f5f4f1;
-      --surface: #edecea;
-      --border: #d8d6d1;
-      --text-primary: #1a1917;
-      --text-secondary: #6b6860;
-      --text-tertiary: #9b9890;
-      --accent: #1a1917;
-      --mono: 'DM Mono', monospace;
-      --sans: 'DM Sans', sans-serif;
+      --bg: #0c0b0d;
+      --panel: #161419;
+      --ink: #ece7dd;
+      --ink-dim: #a39d92;
+      --ink-faint: #6f6a62;
+      --accent: #e07a3e;
+      --line: rgba(236, 231, 221, 0.12);
+      --serif: 'Fraunces', Georgia, serif;
+      --sans: 'Inter', system-ui, sans-serif;
+      --mono: 'Space Mono', monospace;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { font-size: 16px; scroll-behavior: smooth; }
+    html { font-size: 16px; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
     body {
       background: var(--bg);
-      color: var(--text-primary);
+      color: var(--ink);
       font-family: var(--sans);
-      font-weight: 300;
-      line-height: 1.75;
+      line-height: 1.7;
       -webkit-font-smoothing: antialiased;
-      padding: 0 24px;
+      overflow-x: hidden;
     }
 
-    .page-wrap {
-      max-width: 640px;
-      margin: 0 auto;
-      padding: 80px 0 120px;
+    /* Film-grain overlay */
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      pointer-events: none;
+      opacity: 0.045;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     }
 
-    header {
-      margin-bottom: 56px;
-      padding-bottom: 40px;
-      border-bottom: 1px solid var(--border);
+    /* Film-strip header band */
+    .filmstrip {
+      width: 100%;
+      height: 56px;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px;
+      border-bottom: 1px solid var(--line);
+    }
+    .perfs { display: flex; gap: 12px; }
+    .perfs span { width: 16px; height: 22px; background: var(--bg); border-radius: 3px; }
+
+    .wrap { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+
+    header.masthead {
+      padding: 72px 0 48px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 48px;
     }
 
     .brand-row {
       display: flex;
       align-items: center;
       gap: 16px;
-      margin-bottom: 32px;
+      margin-bottom: 36px;
     }
-
     .brand-icon {
-      width: 64px;
-      height: 64px;
+      width: 60px;
+      height: 60px;
       border-radius: 14px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08), 0 1px 0 rgba(255,255,255,0.4) inset;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.5), 0 1px 0 rgba(255,255,255,0.1) inset;
     }
-
     .brand-name {
-      font-family: var(--sans);
-      font-size: 22px;
-      font-weight: 400;
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 26px;
       letter-spacing: -0.01em;
-      color: var(--text-primary);
+      color: var(--ink);
     }
 
-    .app-label {
+    .kicker {
       font-family: var(--mono);
-      font-size: 11px;
-      font-weight: 400;
-      letter-spacing: 0.15em;
+      font-size: 12px;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: var(--text-tertiary);
-      margin-bottom: 20px;
+      color: var(--accent);
+      margin-bottom: 22px;
     }
 
     h1 {
-      font-family: var(--sans);
-      font-size: clamp(32px, 6vw, 44px);
-      font-weight: 300;
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-      color: var(--text-primary);
-      margin-bottom: 24px;
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(36px, 7vw, 56px);
+      line-height: 1.04;
+      letter-spacing: -0.015em;
+      margin-bottom: 26px;
     }
 
     .tagline {
-      font-size: 18px;
-      color: var(--text-secondary);
-      font-weight: 300;
-      max-width: 520px;
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(18px, 2.6vw, 22px);
+      line-height: 1.5;
+      color: var(--ink-dim);
+      max-width: 42ch;
     }
 
-    section { margin-bottom: 48px; }
+    section { margin-bottom: 52px; }
 
     h2 {
       font-family: var(--mono);
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 400;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--text-tertiary);
-      margin-bottom: 20px;
+      color: var(--ink-faint);
+      margin-bottom: 22px;
     }
 
     p {
-      font-size: 16px;
-      color: var(--text-secondary);
-      margin-bottom: 16px;
-      font-weight: 300;
+      font-size: 18px;
+      color: var(--ink);
+      margin-bottom: 22px;
     }
-
     p:last-child { margin-bottom: 0; }
+    section p { color: var(--ink-dim); }
 
-    strong {
-      font-weight: 500;
-      color: var(--text-primary);
-    }
+    strong { font-weight: 500; color: #fff; }
 
     a {
-      color: var(--text-primary);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      text-decoration-color: var(--border);
-      transition: text-decoration-color 0.15s;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(224,122,62,0.4);
     }
-
-    a:hover { text-decoration-color: var(--text-primary); }
-
-    .feature-list {
-      list-style: none;
-      padding: 0;
-    }
-
-    .feature-list li {
-      font-size: 16px;
-      color: var(--text-secondary);
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      gap: 16px;
-      align-items: baseline;
-    }
-
-    .feature-list li:last-child { border-bottom: none; }
-
-    .feature-list .feat-name {
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--text-primary);
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      min-width: 140px;
-      flex-shrink: 0;
-    }
-
-    .feature-list .feat-desc { flex: 1; font-weight: 300; }
+    a:hover { border-bottom-color: var(--accent); }
 
     .cta-row {
-      margin: 40px 0;
+      margin-top: 36px;
       display: flex;
-      gap: 16px;
+      gap: 18px;
       flex-wrap: wrap;
       align-items: center;
     }
-
-    .cta-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--text-primary);
-      color: var(--bg);
-      padding: 14px 24px;
-      border-radius: 999px;
-      text-decoration: none;
+    .cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #1a0f08;
       font-family: var(--sans);
-      font-weight: 400;
+      font-weight: 500;
       font-size: 15px;
-      letter-spacing: 0.01em;
-      transition: opacity 0.15s;
+      padding: 14px 26px;
+      border-radius: 999px;
+      border: none;
     }
-
-    .cta-primary:hover { opacity: 0.85; text-decoration: none; }
-
+    .cta-btn:hover { opacity: 0.9; border: none; }
     .cta-meta {
       font-family: var(--mono);
       font-size: 12px;
-      color: var(--text-tertiary);
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
+      color: var(--ink-faint);
     }
 
+    .feature-list { list-style: none; padding: 0; }
+    .feature-list li {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      gap: 18px;
+      align-items: baseline;
+    }
+    .feature-list li:first-child { border-top: 1px solid var(--line); }
+    .feature-list .feat-name {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      min-width: 124px;
+      flex-shrink: 0;
+    }
+    .feature-list .feat-desc { flex: 1; font-size: 16px; color: var(--ink-dim); line-height: 1.6; }
+    .feature-list a { color: var(--ink); border-bottom-color: var(--line); }
+    .feature-list a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
     footer {
-      margin-top: 80px;
-      padding-top: 32px;
-      border-top: 1px solid var(--border);
+      margin-top: 72px;
+      padding: 32px 0 80px;
+      border-top: 1px solid var(--line);
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 12px;
     }
-
     footer span, footer a {
       font-family: var(--mono);
       font-size: 11px;
-      color: var(--text-tertiary);
+      color: var(--ink-faint);
       letter-spacing: 0.08em;
+      border: none;
     }
-
-    footer a { text-decoration-color: var(--border); }
+    footer a:hover { color: var(--ink); border: none; }
   </style>
 </head>
 <body>
-  <main class="page-wrap">
+  <div class="filmstrip" aria-hidden="true">
+    <div class="perfs"><span></span><span></span><span></span><span></span></div>
+    <div class="perfs"><span></span><span></span><span></span><span></span></div>
+  </div>
 
-    <header>
+  <div class="wrap">
+    <header class="masthead">
       <div class="brand-row">
-        <img class="brand-icon" src="/icon-192.png" alt="Flog app icon" width="64" height="64" />
+        <img class="brand-icon" src="/icon-192.png" alt="Flog app icon" width="60" height="60" />
         <span class="brand-name">Flog</span>
       </div>
-      <p class="app-label">Film Logbook for iPhone</p>
+      <p class="kicker">Film Logbook for iPhone</p>
       <h1>A logbook for every frame of film you shoot.</h1>
       <p class="tagline">Flog records the story behind each frame — camera, film stock, place, light, and exposure — then helps you pair your developed scans back to the shots you took.</p>
+      <div class="cta-row">
+        <a class="cta-btn" href="https://apps.apple.com/app/id6776744262">Download on the App Store</a>
+        <span class="cta-meta">iPhone · iOS 18.0+</span>
+      </div>
     </header>
 
     <section>
       <h2>What it does</h2>
       <p>Shooting film means waiting weeks to see your photos, by which time the details are gone. Flog captures them in the moment: as you shoot, log the camera, the film stock, where you are, the light, and your exposure settings, with a quick in-app reference snap so you remember the shot.</p>
       <p>When your scans come back, import them and Flog helps you pair each one to the frame you logged — so every photo carries the story of how it was made.</p>
-
-      <div class="cta-row">
-        <a class="cta-primary" href="https://apps.apple.com/app/id6776744262">Download on the App Store</a>
-        <span class="cta-meta">iPhone · iOS 18.0+</span>
-      </div>
     </section>
 
     <section>
@@ -320,6 +323,6 @@
       </span>
     </footer>
 
-  </main>
+  </div>
 </body>
 </html>
