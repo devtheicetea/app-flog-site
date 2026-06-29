@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What to Write Down When You Shoot Film — A Frame-Logging Guide | Flog</title>
+  <meta name="description" content="A roll of film won't remember what lens you used or where you stood. A practical guide to what to log frame by frame — camera, stock, exposure, place, and light — and why it matters when your scans come back." />
+  <link rel="canonical" href="https://flog.contraststudio.app/blog/what-to-write-down-when-you-shoot-film.html" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="What to Write Down When You Shoot Film" />
+  <meta property="og:description" content="A practical guide to logging your film shots — camera, stock, exposure, place, and light — so the story survives the weeks between shooting and scanning." />
+  <meta property="og:url" content="https://flog.contraststudio.app/blog/what-to-write-down-when-you-shoot-film.html" />
+  <meta property="og:site_name" content="Flog" />
+  <meta property="og:image" content="https://flog.contraststudio.app/og.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What to Write Down When You Shoot Film" />
+  <meta name="twitter:description" content="A practical guide to logging your film shots so the story survives the weeks between shooting and scanning." />
+  <meta name="twitter:image" content="https://flog.contraststudio.app/og.png" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "What to Write Down When You Shoot Film",
+    "description": "A practical guide to what to log frame by frame when shooting film — camera, stock, exposure, place, and light — and why it matters when your scans come back.",
+    "datePublished": "2026-06-23",
+    "dateModified": "2026-06-23",
+    "image": "https://flog.contraststudio.app/og.png",
+    "url": "https://flog.contraststudio.app/blog/what-to-write-down-when-you-shoot-film.html",
+    "mainEntityOfPage": "https://flog.contraststudio.app/blog/what-to-write-down-when-you-shoot-film.html",
+    "author": { "@type": "Organization", "name": "Contrast Studio LLC" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Flog",
+      "logo": { "@type": "ImageObject", "url": "https://flog.contraststudio.app/icon-192.png" }
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0c0b0d;
+      --panel: #161419;
+      --ink: #ece7dd;
+      --ink-dim: #a39d92;
+      --ink-faint: #6f6a62;
+      --accent: #e07a3e;
+      --line: rgba(236, 231, 221, 0.12);
+      --serif: 'Fraunces', Georgia, serif;
+      --sans: 'Inter', system-ui, sans-serif;
+      --mono: 'Space Mono', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Film-grain overlay */
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      pointer-events: none;
+      opacity: 0.045;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* Film-strip header band */
+    .filmstrip {
+      width: 100%;
+      height: 56px;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px;
+      border-bottom: 1px solid var(--line);
+    }
+    .perfs { display: flex; gap: 12px; }
+    .perfs span {
+      width: 16px;
+      height: 22px;
+      background: var(--bg);
+      border-radius: 3px;
+    }
+
+    .wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .masthead {
+      padding: 64px 0 40px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 48px;
+    }
+
+    .kicker {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(36px, 7vw, 60px);
+      line-height: 1.02;
+      letter-spacing: -0.015em;
+      margin-bottom: 28px;
+    }
+
+    .dek {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(18px, 2.6vw, 22px);
+      line-height: 1.5;
+      color: var(--ink-dim);
+      max-width: 36ch;
+    }
+
+    .byline {
+      margin-top: 32px;
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      color: var(--ink-faint);
+    }
+
+    article { padding-bottom: 32px; }
+
+    article p {
+      font-size: 18px;
+      color: var(--ink);
+      margin-bottom: 26px;
+    }
+
+    article p.lead { color: var(--ink); }
+
+    /* Drop cap */
+    article > p.lead::first-letter {
+      font-family: var(--serif);
+      font-weight: 600;
+      float: left;
+      font-size: 76px;
+      line-height: 0.78;
+      padding: 8px 14px 0 0;
+      color: var(--accent);
+    }
+
+    h2 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(24px, 4vw, 32px);
+      letter-spacing: -0.01em;
+      line-height: 1.15;
+      margin: 52px 0 20px;
+    }
+
+    strong { font-weight: 500; color: #fff; }
+    em { font-style: italic; }
+
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(224,122,62,0.4); }
+    a:hover { border-bottom-color: var(--accent); }
+
+    .pullquote {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(24px, 4.2vw, 34px);
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin: 48px 0;
+      padding-left: 24px;
+      border-left: 3px solid var(--accent);
+    }
+
+    /* Numbered log cards */
+    .log { list-style: none; margin: 8px 0 12px; }
+    .log li {
+      position: relative;
+      padding: 22px 0 22px 64px;
+      border-top: 1px solid var(--line);
+    }
+    .log li:last-child { border-bottom: 1px solid var(--line); }
+    .log .num {
+      position: absolute;
+      left: 0;
+      top: 20px;
+      font-family: var(--mono);
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--accent);
+      width: 44px;
+    }
+    .log .label {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 18px;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .log .body {
+      font-size: 16px;
+      color: var(--ink-dim);
+      line-height: 1.6;
+    }
+
+    .cta {
+      margin: 56px 0 8px;
+      padding: 32px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+    }
+    .cta .eyebrow {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 14px;
+    }
+    .cta p { font-size: 17px; color: var(--ink-dim); margin-bottom: 22px; }
+    .cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #1a0f08;
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 15px;
+      padding: 13px 24px;
+      border-radius: 999px;
+      border: none;
+    }
+    .cta-btn:hover { opacity: 0.9; border: none; }
+
+    footer {
+      border-top: 1px solid var(--line);
+      margin-top: 64px;
+      padding: 32px 0 80px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    footer a, footer span {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: var(--ink-faint);
+      border: none;
+    }
+    footer a:hover { color: var(--ink); border: none; }
+  </style>
+</head>
+<body>
+  <div class="filmstrip" aria-hidden="true">
+    <div class="perfs"><span></span><span></span><span></span><span></span></div>
+    <div class="perfs"><span></span><span></span><span></span><span></span></div>
+  </div>
+
+  <div class="wrap">
+    <header class="masthead">
+      <p class="kicker">Field Notes</p>
+      <h1>What to write down when you shoot film</h1>
+      <p class="dek">A roll of film won't tell you what lens you used, where you stood, or what the light was doing. Here's what to record while you still remember.</p>
+      <p class="byline">Flog · June 2026 · 6 min read</p>
+    </header>
+
+    <article>
+      <p class="lead">There's a strange gap built into shooting film. You press the shutter today, but you won't see the picture for a week, two weeks, sometimes a month — after the roll is finished, mailed, developed, and scanned. By the time the images land, the moment that made them is gone. You're left squinting at a frame, trying to remember: <em>was that the 50 or the 35? Did I push this roll? Where even was this?</em></p>
+
+      <p>Digital quietly solves this for you. Every file carries EXIF — camera, lens, aperture, shutter, ISO, sometimes GPS. Film carries none of it. The negative is just light and silver; it remembers the scene, not the settings. If you want that information, you have to write it down yourself, in the moment, before it evaporates.</p>
+
+      <p>The good news: it takes seconds per frame, and it pays you back every time you look at the scans.</p>
+
+      <h2>Why bother logging at all</h2>
+
+      <p>Two reasons, really. The first is <strong>learning</strong>. Film is a slow feedback loop, and a slow loop only teaches you if you can connect cause to effect. When a frame comes back gorgeous — or muddy, or thin — the log is what tells you <em>why</em>: that you metered for the shadows, that you shot wide open at dusk, that you rated the Tri-X at 1600 and pushed two stops. Without that link, every roll is a fresh roll of the dice.</p>
+
+      <p>The second is simply <strong>memory</strong>. A roll of 36 frames shot across a weekend trip becomes, a month later, 36 small mysteries. A few lines per frame turns them back into a record of where you were and what you saw.</p>
+
+      <p class="pullquote">The negative remembers the scene. Only you can remember the settings.</p>
+
+      <h2>What to log, frame by frame</h2>
+
+      <p>You don't need all of this every time. But these are the fields worth a column in your notebook — roughly in order of how often you'll thank yourself for them.</p>
+
+      <ol class="log">
+        <li>
+          <span class="num">01</span>
+          <div class="label">Camera &amp; lens</div>
+          <div class="body">Especially if you shoot more than one body or swap glass mid-roll. "Which lens was this?" is the single most common thing photographers wish they'd noted.</div>
+        </li>
+        <li>
+          <span class="num">02</span>
+          <div class="label">Film stock &amp; rated ISO</div>
+          <div class="body">The stock and the speed you actually shot it at — box speed, or pushed/pulled. This drives how the lab develops it, so it matters before the frame even exists as a picture.</div>
+        </li>
+        <li>
+          <span class="num">03</span>
+          <div class="label">Exposure</div>
+          <div class="body">Aperture and shutter speed, and how you metered (incident, spot, sunny-16 by eye). This is the part that turns a good or bad frame into a lesson.</div>
+        </li>
+        <li>
+          <span class="num">04</span>
+          <div class="label">Where &amp; when</div>
+          <div class="body">Location, date, and time. Time of day quietly encodes the light — golden hour, flat noon, blue hour — which explains more about a frame's mood than almost anything else.</div>
+        </li>
+        <li>
+          <span class="num">05</span>
+          <div class="label">The subject</div>
+          <div class="body">One line. "Mara on the fire escape." "Third bridge, looking west." Enough to recognize the frame instantly when the scans come back out of order.</div>
+        </li>
+        <li>
+          <span class="num">06</span>
+          <div class="label">A reference snap</div>
+          <div class="body">A quick phone photo of the same scene. Nothing reconnects a scan to its moment faster than a colour reference you took two seconds later.</div>
+        </li>
+      </ol>
+
+      <h2>And for the whole roll</h2>
+
+      <p>A handful of things belong to the roll, not the frame: a <strong>roll number</strong> so you can match it to the canister and, later, to the scans; the dates you <strong>loaded and finished</strong> it; which <strong>lab</strong> it went to; and any <strong>development notes</strong> — push two stops, cross-process, handle gently. Write the roll number on the canister in marker too. Negatives and notebooks get separated; a number on both is how they find each other again.</p>
+
+      <h2>Notebook, or something faster</h2>
+
+      <p>A pocket notebook works, and plenty of photographers swear by one. The friction shows up later: a 36-frame roll is a lot of tiny handwriting to do in the cold or the dark, and when the scans arrive you still have to sit down and pair each image to its line by hand. The record and the photos live in two different places, and keeping them married is its own chore.</p>
+
+      <p>That gap is exactly what we built <a href="https://flog.contraststudio.app/">Flog</a> to close. You log a frame in a couple of taps — camera and stock pulled from your gear, light and place filled in for you, a reference snap attached — and when your developed scans come back, Flog helps you pair each one to the frame you logged. The story and the picture end up in the same place, which is where they were always supposed to be.</p>
+
+      <p>However you do it, do <em>something</em>. The five seconds you spend now is a gift to the version of you who, a month from today, is holding a beautiful frame and wondering how on earth you made it.</p>
+
+      <div class="cta">
+        <p class="eyebrow">Keep a logbook that pairs with your scans</p>
+        <p>Flog is a film photography logbook for iPhone — log every frame as you shoot, then bring your developed scans home to the shots they belong to.</p>
+        <a class="cta-btn" href="https://apps.apple.com/app/id6776744262">Download on the App Store</a>
+      </div>
+    </article>
+
+    <footer>
+      <span>© 2026 Contrast Studio LLC</span>
+      <span>
+        <a href="https://flog.contraststudio.app/">Flog</a>
+        &nbsp;·&nbsp;
+        <a href="/support.html">Support</a>
+        &nbsp;·&nbsp;
+        <a href="/privacy.html">Privacy</a>
+      </span>
+    </footer>
+  </div>
+</body>
+</html>

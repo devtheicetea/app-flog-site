@@ -6,6 +6,11 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://flog.contraststudio.app/blog/what-to-write-down-when-you-shoot-film.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flog.contraststudio.app/support.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
