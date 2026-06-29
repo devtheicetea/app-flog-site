@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flog — Film Photography Logbook for iPhone</title>
+  <meta name="description" content="Flog is a film photography logbook for iPhone. Log every frame you shoot — camera, film stock, location, light, and exposure — then import your developed scans and pair them back to the original shots." />
+  <link rel="canonical" href="https://flog.contraststudio.app/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Flog — Film Photography Logbook for iPhone" />
+  <meta property="og:description" content="Log every frame of film you shoot — camera, stock, place, light, and exposure — then pair your developed scans back to the original shots." />
+  <meta property="og:url" content="https://flog.contraststudio.app/" />
+  <meta property="og:site_name" content="Flog" />
+  <meta property="og:image" content="https://flog.contraststudio.app/og.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Flog — Film Photography Logbook for iPhone" />
+  <meta name="twitter:description" content="Log every frame of film you shoot, then pair your developed scans back to the original shots." />
+  <meta name="twitter:image" content="https://flog.contraststudio.app/og.png" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Flog",
+    "alternateName": "Flog — Film Logbook",
+    "operatingSystem": "iOS 18.0",
+    "applicationCategory": "PhotographyApplication",
+    "description": "A film photography logbook for iPhone. Log every frame you shoot — camera, film stock, location, light, and exposure metadata with an in-app reference snap — then import developed scans and pair them back to the original frames. Supports 35mm, 120, 110, large format, and instant film.",
+    "url": "https://flog.contraststudio.app/",
+    "downloadUrl": "https://apps.apple.com/app/id6776744262",
+    "installUrl": "https://apps.apple.com/app/id6776744262",
+    "image": "https://flog.contraststudio.app/og.png",
+    "author": {
+      "@type": "Organization",
+      "name": "Contrast Studio LLC",
+      "url": "https://flog.contraststudio.app/"
+    }
+  }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5f4f1;
+      --surface: #edecea;
+      --border: #d8d6d1;
+      --text-primary: #1a1917;
+      --text-secondary: #6b6860;
+      --text-tertiary: #9b9890;
+      --accent: #1a1917;
+      --mono: 'DM Mono', monospace;
+      --sans: 'DM Sans', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      padding: 0 24px;
+    }
+
+    .page-wrap {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 80px 0 120px;
+    }
+
+    header {
+      margin-bottom: 56px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .brand-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08), 0 1px 0 rgba(255,255,255,0.4) inset;
+    }
+
+    .brand-name {
+      font-family: var(--sans);
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+    }
+
+    .app-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: var(--sans);
+      font-size: clamp(32px, 6vw, 44px);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+    }
+
+    .tagline {
+      font-size: 18px;
+      color: var(--text-secondary);
+      font-weight: 300;
+      max-width: 520px;
+    }
+
+    section { margin-bottom: 48px; }
+
+    h2 {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      font-weight: 300;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    strong {
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    a {
+      color: var(--text-primary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--border);
+      transition: text-decoration-color 0.15s;
+    }
+
+    a:hover { text-decoration-color: var(--text-primary); }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .feature-list li {
+      font-size: 16px;
+      color: var(--text-secondary);
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 16px;
+      align-items: baseline;
+    }
+
+    .feature-list li:last-child { border-bottom: none; }
+
+    .feature-list .feat-name {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text-primary);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      min-width: 140px;
+      flex-shrink: 0;
+    }
+
+    .feature-list .feat-desc { flex: 1; font-weight: 300; }
+
+    .cta-row {
+      margin: 40px 0;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .cta-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--text-primary);
+      color: var(--bg);
+      padding: 14px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-family: var(--sans);
+      font-weight: 400;
+      font-size: 15px;
+      letter-spacing: 0.01em;
+      transition: opacity 0.15s;
+    }
+
+    .cta-primary:hover { opacity: 0.85; text-decoration: none; }
+
+    .cta-meta {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.05em;
+    }
+
+    footer {
+      margin-top: 80px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    footer span, footer a {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.08em;
+    }
+
+    footer a { text-decoration-color: var(--border); }
+  </style>
+</head>
+<body>
+  <main class="page-wrap">
+
+    <header>
+      <div class="brand-row">
+        <img class="brand-icon" src="/icon-192.png" alt="Flog app icon" width="64" height="64" />
+        <span class="brand-name">Flog</span>
+      </div>
+      <p class="app-label">Film Logbook for iPhone</p>
+      <h1>A logbook for every frame of film you shoot.</h1>
+      <p class="tagline">Flog records the story behind each frame — camera, film stock, place, light, and exposure — then helps you pair your developed scans back to the shots you took.</p>
+    </header>
+
+    <section>
+      <h2>What it does</h2>
+      <p>Shooting film means waiting weeks to see your photos, by which time the details are gone. Flog captures them in the moment: as you shoot, log the camera, the film stock, where you are, the light, and your exposure settings, with a quick in-app reference snap so you remember the shot.</p>
+      <p>When your scans come back, import them and Flog helps you pair each one to the frame you logged — so every photo carries the story of how it was made.</p>
+
+      <div class="cta-row">
+        <a class="cta-primary" href="https://apps.apple.com/app/id6776744262">Download on the App Store</a>
+        <span class="cta-meta">iPhone · iOS 18.0+</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Features</h2>
+      <ul class="feature-list">
+        <li><span class="feat-name">Frame log</span><span class="feat-desc">Camera, film stock, location, light, and exposure (aperture, shutter, ISO) for every frame — with an in-app reference snap, Live Photo, and the weather at the moment you shot.</span></li>
+        <li><span class="feat-name">Rolls</span><span class="feat-desc">Track each roll through its life: loaded, finished, at the lab, developed, archived. Disposable and instant cameras supported too.</span></li>
+        <li><span class="feat-name">Scans</span><span class="feat-desc">Import your developed scans and pair them back to the right frame, with Vision-powered matching.</span></li>
+        <li><span class="feat-name">Formats</span><span class="feat-desc">35mm, half-frame, 120 (6×4.5, 6×6, 6×7, 6×9), 110, large format (4×5, 8×10), and instant — Polaroid and Instax.</span></li>
+        <li><span class="feat-name">Gear</span><span class="feat-desc">A curated catalog of 60+ cameras. Build your shelf and load rolls straight from your own gear.</span></li>
+        <li><span class="feat-name">Archive</span><span class="feat-desc">Browse your shots by timeline, map, film stock, camera, or year — and search across everything.</span></li>
+        <li><span class="feat-name">Share</span><span class="feat-desc">Export single frames in editorial styles, plus double exposures and collages.</span></li>
+        <li><span class="feat-name">Languages</span><span class="feat-desc">English, German, Spanish, French, Italian, Japanese, Korean, Dutch, Polish, Portuguese, Russian, Swedish, Turkish, Arabic, and both Chinese variants.</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Who it's for</h2>
+      <p>If you shoot 35mm, 120, or instant film and want to remember more than just the photo — which lens, which stock, where you stood, what the light was doing — Flog is the notebook for it. Keep a clean record of every roll, and bring your scans home to the frames they belong to.</p>
+    </section>
+
+    <footer>
+      <span>© 2026 Contrast Studio LLC</span>
+      <span>
+        <a href="support.html">Support</a>
+        &nbsp;·&nbsp;
+        <a href="privacy.html">Privacy</a>
+        &nbsp;·&nbsp;
+        <a href="terms.html">Terms</a>
+      </span>
+    </footer>
+
+  </main>
+</body>
+</html>
