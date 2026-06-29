@@ -208,6 +208,9 @@
       border: 1px solid var(--line);
       border-radius: 16px;
     }
+    .cta-head { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+    .cta-icon { width: 48px; height: 48px; border-radius: 11px; flex-shrink: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.45), 0 1px 0 rgba(255,255,255,0.1) inset; }
+    .cta-head .eyebrow { margin-bottom: 0; }
     .cta .eyebrow {
       font-family: var(--mono);
       font-size: 11px;
@@ -311,7 +314,10 @@
       <p>That's the same habit we wrote about in <a href="/blog/what-to-write-down-when-you-shoot-film.html">what to write down when you shoot film</a> — and it's the whole reason <a href="https://flog.contraststudio.app/">Flog</a> exists: log the stock and the speed you rated it at as you shoot, and pair it back to the scans when they return, so your pushes and pulls actually teach you something.</p>
 
       <div class="cta">
-        <p class="eyebrow">Log every push, pull, and stock</p>
+        <div class="cta-head">
+          <img class="cta-icon" src="/icon-192.png" alt="Flog app icon" width="48" height="48" />
+          <p class="eyebrow">Log every push, pull, and stock</p>
+        </div>
         <p>Flog is a film photography logbook for iPhone — record the rated speed and settings for every roll, then pair your developed scans back to the frames they came from.</p>
         <a class="cta-btn" href="https://apps.apple.com/app/id6776744262">Download on the App Store</a>
       </div>

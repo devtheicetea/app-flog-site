@@ -237,6 +237,9 @@
       border: 1px solid var(--line);
       border-radius: 16px;
     }
+    .cta-head { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+    .cta-icon { width: 48px; height: 48px; border-radius: 11px; flex-shrink: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.45), 0 1px 0 rgba(255,255,255,0.1) inset; }
+    .cta-head .eyebrow { margin-bottom: 0; }
     .cta .eyebrow {
       font-family: var(--mono);
       font-size: 11px;
@@ -357,7 +360,10 @@
       <p>However you do it, do <em>something</em>. The five seconds you spend now is a gift to the version of you who, a month from today, is holding a beautiful frame and wondering how on earth you made it.</p>
 
       <div class="cta">
-        <p class="eyebrow">Keep a logbook that pairs with your scans</p>
+        <div class="cta-head">
+          <img class="cta-icon" src="/icon-192.png" alt="Flog app icon" width="48" height="48" />
+          <p class="eyebrow">Keep a logbook that pairs with your scans</p>
+        </div>
         <p>Flog is a film photography logbook for iPhone — log every frame as you shoot, then bring your developed scans home to the shots they belong to.</p>
         <a class="cta-btn" href="https://apps.apple.com/app/id6776744262">Download on the App Store</a>
       </div>
